@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        div{
+            
+            width:50px;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="kodelås"></div>
+
+
+    <script>
+
+        //model
+        var tallOutput = '';
+        
+
+
+        //view
+        showDiv();
+        function showDiv(){
+        document.getElementById('kodelås').innerHTML = `
+        <table>
+        <tr>
+            <td> <button id="1" onclick="tell(this.innerText)">1</button> </td>
+            <td> <button id="2" onclick="tell(this.innerText)">2</button> </td>
+            <td> <button id="3" onclick="tell(this.innerText)">3</button> </td>
+
+        </tr>
+        <tr>
+            <td> <button id="4" onclick="tell(this.innerText)">4</button> </td>
+            <td> <button id="5" onclick="tell(this.innerText)">5</button> </td>
+            <td> <button id="6" onclick="tell(this.innerText)">6</button> </td>
+
+        </tr>
+        <tr>
+            <td> <button id="7" onclick="tell(this.innerText)">7</button> </td>
+            <td> <button id="8" onclick="tell(this.innerText)">8</button> </td>
+            <td> <button id="9" onclick="tell(this.innerText)">9</button> </td>
+
+        </tr>
+        </table>
+        <div>: ${tallOutput} </div><button  onclick="ferdig()">Ok</button>
+        <p>${(tallOutput == 3232)?"Åpen!":"Låst"}</p>
+
+        `
+}
+//controller
+function tell(ok) {
+            tallOutput += ok;
+            showDiv();
+
+        }
+        function ferdig(){
+            if(tallOutput == 3232) {
+                alert('Riktig!');
+            } else {
+            alert('feil');
+             }
+             
+        }
+
+
+        
+        
+
+    </script>
+</body>
+</html>
+

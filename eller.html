@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+  
+
+    <script>
+//model
+
+var bakgrunn;
+//let farger = '';
+
+
+//view
+visDiv();
+function visDiv(){
+
+document.getElementById('app').innerHTML = `
+
+<h1> if setning eller (||) </h1>
+<label for="colors">Velg farge</label>
+<select id="colors" name="colors" value="selected" onchange="bakgrunn=this.value; visDiv();">
+    <option value="none">Ingen</option>
+    <option value="black">Svart</option>
+    <option value="darkblue">Mørkblå</option>
+    <option value="grey">Lys grå</option>
+    <option value="green">Lys grønn</option>
+    <option value="Red">Lys rød</option>
+</select>
+ <div style="width:100px; height:100px; background-color:${bakgrunn}; color:${(bakgrunn == 'black' || bakgrunn == 'darkblue')?"white;":"black;"}">HEI</div>
+
+`
+}
+
+//controller
+//function forgrunn(){
+
+ //   if(bakgrunn= 'black' || 'darkblue'){
+
+  //  }
+//}
+
+/*function endreFarge(){ 
+     
+bakgrunn.style.color = 'black' ;
+visDiv();*/
+</script>
+</body>
+</html>
