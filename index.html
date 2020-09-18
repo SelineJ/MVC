@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logg inn</title>
+</head>
+<body>
+    <div id="app">
+        <div id="error" style ="color: red"></div>
+    Brukernavn:<br/>
+    <input id="username" type="text"/><br/>
+    Passord:<br/>
+    <input id="password" type="password"/><br/>
+    <button onclick="logIn()">Logg inn</button>
+    </div>
+    <script>
+        function logIn() {
+            //henter brukernavn og passord fra input.
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        //Hvis username er lik seline OG passord er lik hemmelig
+        if(username === 'seline' && password === 'hemmelig') {
+            document.getElementById('app').innerHTML = 'Du er logget inn.';
+
+        } else {
+         document.getElementById('error').innerHTML = 
+          'Feil brukernavn og/eller passord. Prøv igjen.';
+        }
+
+
+        }
+    </script>
+</body>
+</html>

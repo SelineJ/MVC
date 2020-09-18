@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="lib.js"></script>
+
+    <script>
+       let numbers = [7, 3, 1, 5, 8];
+        let chosenBar = null;      // Variabel for hvilken stolpe som er valgt
+        let inputValue; 
+        let selectedBarNo;
+           // Variabel for hva som er skrevet i input-feltet
+        
+     
+   
+     function show() {}
+
+  QUnit.test("legge til stolpe", function (assert) {
+    numbers = [7, 3, 1, 5, 8];
+    inputValue = 4;
+    addStolpe();
+    assert.deepEqual(numbers, [7, 3, 1, 5, 8, 4]);
+  });
+
+  QUnit.test("Endre stolpe", function (assert) {
+    numbers = [7, 3, 1, 5, 8];
+    chosenBar = 3;
+    inputValue = 4;
+    endreStolpe();
+    assert.deepEqual(numbers, [7, 3, 4, 5, 8]);
+  });
+  QUnit.test("Slette stolpe", function (assert) {
+    numbers = [7, 3, 1, 5, 8];
+    chosenBar = 3;
+    removeStolpe();
+    assert.deepEqual(numbers, [7, 3, 5, 8]);
+  });
+
+  QUnit.test("valgt", function (assert) {
+    let barNo = 6;
+    chosenBar = 6;
+    chosen(barNo);
+    assert.equal(chosenBar, null);
+   
+  });
+
+  QUnit.test("ikke valgt", function (assert) {
+    chosenBar = 6;
+    let barNo = 3;
+    chosen(barNo);
+    assert.equal(chosenBar, barNo );
+   
+  });
+
+
+
+  
+    
+</script>
+  
+
+</body>
+
+</html>

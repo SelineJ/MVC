@@ -10,7 +10,22 @@
 
    
     <script>
-    
+    //modell
+
+    var fyll;
+    var bunn;
+    var strl;
+/*      
+var btnBestill = document.getElementById('bestill');
+        var infoDiv = document.getElementById('info');
+        var bunnTykk = document.getElementById('tykkBunn');
+        var bunnTynn = document.getElementById('tynnBunn');
+        var fyllTaco = document.getElementById('fyllTaco');
+        var fyllKylling = document.getElementById('fyllKylling');
+        var fyllPepperoni = document.getElementById('fyllPepperoni');
+        var strStor = document.getElementById('stor');
+        var strMiddels = document.getElementById('middels');
+        var strLiten = document.getElementById('liten');*/
 
     //view
     visDiv();
@@ -38,17 +53,8 @@
     </ul>
     `
     }
-       /* var btnBestill = document.getElementById('bestill');
-        var infoDiv = document.getElementById('info');
-        var bunnTykk = document.getElementById('tykkBunn');
-        var bunnTynn = document.getElementById('tynnBunn');
-        var fyllTaco = document.getElementById('fyllTaco');
-        var fyllKylling = document.getElementById('fyllKylling');
-        var fyllPepperoni = document.getElementById('fyllPepperoni');
-        var strStor = document.getElementById('stor');
-        var strMiddels = document.getElementById('middels');
-        var strLiten = document.getElementById('liten');
-*/
+       
+
         function info() {
             if ((bunnTykk.checked || bunnTynn.checked) &&
                 (fyllTaco.checked || fyllKylling.checked || fyllPepperoni.checked) &&
